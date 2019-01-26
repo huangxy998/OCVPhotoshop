@@ -23,16 +23,587 @@
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="mFileMenu">
+    <property name="geometry">
+     <rect>
+      <x>818</x>
+      <y>176</y>
+      <width>238</width>
+      <height>669</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="mActionNewFile"/>
+    <addaction name="mActionOpenFile"/>
+    <addaction name="mActionBrowseFile"/>
+    <addaction name="mActionOpenAs"/>
+    <addaction name="mActionResentOpenedFiles"/>
+    <addaction name="separator"/>
+    <addaction name="mActionClose"/>
+    <addaction name="mActionCloseAll"/>
+    <addaction name="mActionSave"/>
+    <addaction name="mActionSaveAs"/>
+    <addaction name="mActionSaveVersion"/>
+    <addaction name="mActionSaveForWeb"/>
+    <addaction name="mActionResume"/>
+    <addaction name="separator"/>
+    <addaction name="mActionLocated"/>
+    <addaction name="separator"/>
+    <addaction name="mActionImport"/>
+    <addaction name="mActionExport"/>
+    <addaction name="separator"/>
+    <addaction name="mActionAutomatic"/>
+    <addaction name="mActionScript"/>
+    <addaction name="separator"/>
+    <addaction name="mActionBriefIntroduction"/>
+    <addaction name="mActionVersion"/>
+    <addaction name="separator"/>
+    <addaction name="mActionPageSetting"/>
+    <addaction name="mActionPrintPreview"/>
+    <addaction name="mActionPrint"/>
+    <addaction name="separator"/>
+    <addaction name="mActionQuit"/>
+   </widget>
+   <widget class="QMenu" name="mEditMenu">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="mActionRedo"/>
+    <addaction name="mActionUndo"/>
+    <addaction name="mActionBack"/>
+    <addaction name="separator"/>
+    <addaction name="mActionFade"/>
+    <addaction name="separator"/>
+    <addaction name="mActionCut"/>
+    <addaction name="mActionCopy"/>
+    <addaction name="mActionGatherCopy"/>
+    <addaction name="mActionPaste"/>
+    <addaction name="mActionPasteInto"/>
+    <addaction name="mActionClear"/>
+    <addaction name="separator"/>
+    <addaction name="mActionSpellCheck"/>
+    <addaction name="mActionTextResearch"/>
+    <addaction name="separator"/>
+    <addaction name="mActionFill"/>
+    <addaction name="mActionStroke"/>
+    <addaction name="separator"/>
+    <addaction name="mActionCustomTransformation"/>
+    <addaction name="mActionTransformation"/>
+    <addaction name="separator"/>
+    <addaction name="mActionDefinePenPreset"/>
+    <addaction name="mActionDefineImage"/>
+    <addaction name="mActionDefineCustomShape"/>
+    <addaction name="separator"/>
+    <addaction name="mActionClean"/>
+    <addaction name="separator"/>
+    <addaction name="mActionColorSetting"/>
+    <addaction name="mActionPresettingManager"/>
+    <addaction name="mActionPreset"/>
+   </widget>
+   <widget class="QMenu" name="mImageMenu">
+    <property name="title">
+     <string>图像(&amp;I)</string>
+    </property>
+    <addaction name="mActionMode"/>
+    <addaction name="separator"/>
+    <addaction name="mActionAdjustment"/>
+    <addaction name="separator"/>
+    <addaction name="mActionImageCopy"/>
+    <addaction name="mActionImageApplication"/>
+    <addaction name="mActionCalculate"/>
+    <addaction name="separator"/>
+    <addaction name="mActionImageSize"/>
+    <addaction name="mActionCanvasSize"/>
+    <addaction name="mActionPixelAspectRatio"/>
+    <addaction name="mActionRotateCanvas"/>
+    <addaction name="mActionCutting"/>
+    <addaction name="mActionRepair"/>
+    <addaction name="mActionViewAll"/>
+    <addaction name="separator"/>
+    <addaction name="mActionSinkSeal"/>
+   </widget>
+   <widget class="QMenu" name="mLayerMenu">
+    <property name="title">
+     <string>图层(&amp;L)</string>
+    </property>
+    <addaction name="mActionNewLayer"/>
+    <addaction name="mActionCoopyLayer"/>
+    <addaction name="mActionDeleteLayer"/>
+    <addaction name="separator"/>
+    <addaction name="mActionLayerAttribute"/>
+    <addaction name="mActionLayerStyle"/>
+    <addaction name="separator"/>
+    <addaction name="mActionNewFillLayer"/>
+    <addaction name="mActionNewAdjustLayer"/>
+    <addaction name="mActionModifyLayer"/>
+    <addaction name="mActionLayerOption"/>
+    <addaction name="mActionCharacters"/>
+    <addaction name="mActionRasterize"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="mSelectMenu">
+    <property name="title">
+     <string>选择(&amp;S)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="mFiltersMenu">
+    <property name="title">
+     <string>滤镜(&amp;T)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="mViewMenu">
+    <property name="title">
+     <string>视图(&amp;V)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="mWindowMenu">
+    <property name="title">
+     <string>窗口(&amp;W)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="mHelpMenu">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+   </widget>
+   <addaction name="mFileMenu"/>
+   <addaction name="mEditMenu"/>
+   <addaction name="mImageMenu"/>
+   <addaction name="mLayerMenu"/>
+   <addaction name="mSelectMenu"/>
+   <addaction name="mFiltersMenu"/>
+   <addaction name="mViewMenu"/>
+   <addaction name="mWindowMenu"/>
+   <addaction name="mHelpMenu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
+   <addaction name="mActionNewFile"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="mActionNewFile">
+   <property name="text">
+    <string>新建(&amp;N)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="mActionOpenFile">
+   <property name="text">
+    <string>打开(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="mActionBrowseFile">
+   <property name="text">
+    <string>浏览(&amp;B)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="mActionOpenAs">
+   <property name="text">
+    <string>打开为(&amp;A)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+O</string>
+   </property>
+  </action>
+  <action name="mActionResentOpenedFiles">
+   <property name="text">
+    <string>最近打开文件(&amp;R)</string>
+   </property>
+  </action>
+  <action name="mActionClose">
+   <property name="text">
+    <string>关闭(&amp;C)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="mActionCloseAll">
+   <property name="text">
+    <string>关闭全部</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+W</string>
+   </property>
+  </action>
+  <action name="mActionSave">
+   <property name="text">
+    <string>存储(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>存储(S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="mActionSaveAs">
+   <property name="text">
+    <string>存储为(&amp;V)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="mActionSaveVersion">
+   <property name="text">
+    <string>存储版本...</string>
+   </property>
+  </action>
+  <action name="mActionSaveForWeb">
+   <property name="text">
+    <string>存储为Web所用格式(&amp;W)...</string>
+   </property>
+  </action>
+  <action name="mActionResume">
+   <property name="text">
+    <string>恢复(&amp;T)</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="mActionLocated">
+   <property name="text">
+    <string>置入(&amp;L)...</string>
+   </property>
+  </action>
+  <action name="mActionImport">
+   <property name="text">
+    <string>导入(&amp;M)</string>
+   </property>
+  </action>
+  <action name="mActionExport">
+   <property name="text">
+    <string>导出(&amp;E)</string>
+   </property>
+  </action>
+  <action name="mActionAutomatic">
+   <property name="text">
+    <string>自动(&amp;U)</string>
+   </property>
+  </action>
+  <action name="mActionScript">
+   <property name="text">
+    <string>脚本(&amp;K)</string>
+   </property>
+  </action>
+  <action name="mActionBriefIntroduction">
+   <property name="text">
+    <string>文件简介(&amp;F)...</string>
+   </property>
+  </action>
+  <action name="mActionVersion">
+   <property name="text">
+    <string>版本...</string>
+   </property>
+  </action>
+  <action name="mActionPageSetting">
+   <property name="text">
+    <string>页面设置(&amp;G)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+  <action name="mActionPrintPreview">
+   <property name="text">
+    <string>打印预览(&amp;H)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+P</string>
+   </property>
+  </action>
+  <action name="mActionPrint">
+   <property name="text">
+    <string>打印(&amp;P)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="mActionQuit">
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="mActionRedo">
+   <property name="text">
+    <string>还原</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="mActionUndo">
+   <property name="text">
+    <string>向前(&amp;W)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="mActionBack">
+   <property name="text">
+    <string>返回(&amp;K)</string>
+   </property>
+  </action>
+  <action name="mActionFade">
+   <property name="text">
+    <string>消褪(&amp;D)...</string>
+   </property>
+  </action>
+  <action name="mActionCut">
+   <property name="text">
+    <string>剪切(&amp;T)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="mActionCopy">
+   <property name="text">
+    <string>拷贝(&amp;C)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="mActionGatherCopy">
+   <property name="text">
+    <string>合并拷贝(&amp;Y)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="mActionPaste">
+   <property name="text">
+    <string>粘贴(&amp;P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="mActionPasteInto">
+   <property name="text">
+    <string>粘贴入(&amp;I)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+V</string>
+   </property>
+  </action>
+  <action name="mActionClear">
+   <property name="text">
+    <string>清除(&amp;E)</string>
+   </property>
+  </action>
+  <action name="mActionSpellCheck">
+   <property name="text">
+    <string>拼写检查(&amp;H)...</string>
+   </property>
+  </action>
+  <action name="mActionTextResearch">
+   <property name="text">
+    <string>查找和替换文本(&amp;X)...</string>
+   </property>
+  </action>
+  <action name="mActionFill">
+   <property name="text">
+    <string>填充(&amp;L)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F5</string>
+   </property>
+  </action>
+  <action name="mActionStroke">
+   <property name="text">
+    <string>描边(&amp;S)...</string>
+   </property>
+  </action>
+  <action name="mActionCustomTransformation">
+   <property name="text">
+    <string>自由变换(&amp;T)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="mActionTransformation">
+   <property name="text">
+    <string>变换(&amp;A)</string>
+   </property>
+  </action>
+  <action name="mActionDefinePenPreset">
+   <property name="text">
+    <string>定义画笔预设(&amp;B)...</string>
+   </property>
+  </action>
+  <action name="mActionDefineImage">
+   <property name="text">
+    <string>定义图案(&amp;D)...</string>
+   </property>
+  </action>
+  <action name="mActionDefineCustomShape">
+   <property name="text">
+    <string>定义自定形状(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="mActionClean">
+   <property name="text">
+    <string>清理(&amp;R)</string>
+   </property>
+  </action>
+  <action name="mActionColorSetting">
+   <property name="text">
+    <string>颜色设置(&amp;G)...</string>
+   </property>
+  </action>
+  <action name="mActionPresettingManager">
+   <property name="text">
+    <string>预设管理器(&amp;M)</string>
+   </property>
+  </action>
+  <action name="mActionPreset">
+   <property name="text">
+    <string>预置(&amp;N)</string>
+   </property>
+  </action>
+  <action name="mActionMode">
+   <property name="text">
+    <string>模式(&amp;M)</string>
+   </property>
+  </action>
+  <action name="mActionAdjustment">
+   <property name="text">
+    <string>调整(&amp;A)</string>
+   </property>
+  </action>
+  <action name="mActionImageCopy">
+   <property name="text">
+    <string>复制(&amp;D)...</string>
+   </property>
+  </action>
+  <action name="mActionImageApplication">
+   <property name="text">
+    <string>应用图像(&amp;Y)...</string>
+   </property>
+  </action>
+  <action name="mActionCalculate">
+   <property name="text">
+    <string>计算(&amp;C)...</string>
+   </property>
+  </action>
+  <action name="mActionImageSize">
+   <property name="text">
+    <string>图像大小(I)...</string>
+   </property>
+  </action>
+  <action name="mActionCanvasSize">
+   <property name="text">
+    <string>画布大小(&amp;S)...</string>
+   </property>
+  </action>
+  <action name="mActionPixelAspectRatio">
+   <property name="text">
+    <string>像素长宽比(&amp;X)</string>
+   </property>
+  </action>
+  <action name="mActionRotateCanvas">
+   <property name="text">
+    <string>旋转画布(&amp;E)</string>
+   </property>
+  </action>
+  <action name="mActionCutting">
+   <property name="text">
+    <string>裁切(&amp;P)</string>
+   </property>
+  </action>
+  <action name="mActionRepair">
+   <property name="text">
+    <string>修整(&amp;R)...</string>
+   </property>
+  </action>
+  <action name="mActionViewAll">
+   <property name="text">
+    <string>显示全部(&amp;V)</string>
+   </property>
+  </action>
+  <action name="mActionSinkSeal">
+   <property name="text">
+    <string>陷印(T)...</string>
+   </property>
+  </action>
+  <action name="mActionNewLayer">
+   <property name="text">
+    <string>新建(&amp;W)</string>
+   </property>
+  </action>
+  <action name="mActionCoopyLayer">
+   <property name="text">
+    <string>复制图层(&amp;D)</string>
+   </property>
+  </action>
+  <action name="mActionDeleteLayer">
+   <property name="text">
+    <string>删除(&amp;L)</string>
+   </property>
+  </action>
+  <action name="mActionLayerAttribute">
+   <property name="text">
+    <string>图层属性...</string>
+   </property>
+  </action>
+  <action name="mActionLayerStyle">
+   <property name="text">
+    <string>图层样式(&amp;Y)</string>
+   </property>
+  </action>
+  <action name="mActionNewFillLayer">
+   <property name="text">
+    <string>新填充图层(&amp;P)</string>
+   </property>
+  </action>
+  <action name="mActionNewAdjustLayer">
+   <property name="text">
+    <string>新调整图层(&amp;J)</string>
+   </property>
+  </action>
+  <action name="mActionModifyLayer">
+   <property name="text">
+    <string>更改图层内容(&amp;H)</string>
+   </property>
+  </action>
+  <action name="mActionLayerOption">
+   <property name="text">
+    <string>图层内容选项(&amp;O)...</string>
+   </property>
+  </action>
+  <action name="mActionCharacters">
+   <property name="text">
+    <string>文字(&amp;T)</string>
+   </property>
+  </action>
+  <action name="mActionRasterize">
+   <property name="text">
+    <string>栅格化(&amp;Z)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
