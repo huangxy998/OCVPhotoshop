@@ -33,10 +33,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        opsapp.cpp
+        opsapp.cpp \
+    opsnewfiledialog.cpp \
+    opsnewfilepresetsavedialog.cpp
 
 HEADERS += \
-        opsapp.h
+        opsapp.h \
+    opsnewfiledialog.h \
+    opsnewfilepresetsavedialog.h
 
 FORMS += \
-        opsapp.ui
+        opsapp.ui \
+    opsnewfiledialog.ui \
+    opsnewfilepresetsavedialog.ui
